@@ -1,0 +1,16 @@
+.gumb-wrap {
+  .gumb {
+    background-color: rgb(53, 192, 60);
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+    &-active {
+      background-color: rgb(192, 53, 53);
+    }
+  }
+}

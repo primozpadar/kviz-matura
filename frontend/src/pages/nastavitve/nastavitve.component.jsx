@@ -1,6 +1,6 @@
 import React from "react";
 import "./nastavitve.styles.scss";
-import VprasanjeForm from "../../components/vprasanje-form.component";
+import VprasanjeForm from "../../components/vprasanje-form/vprasanje-form.component";
 
 class Nastavitve extends React.Component {
   state = {
