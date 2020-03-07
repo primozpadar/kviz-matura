@@ -1,0 +1,14 @@
+@import "../../assets/style.scss";
+
+.vprasanje {
+  @include center;
+  @include robovi(2);
+  @include senca;
+  background: $vijolicna;
+  width: 75%;
+  height: 100%;
+  //TODO-bela ali siva za pisavo??
+  color: $siva;
+  font-weight: bold;
+  font-size: 2.5rem;
+}

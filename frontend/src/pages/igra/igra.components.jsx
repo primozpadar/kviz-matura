@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 import socketIO from "socket.io-client";
-import IgraGumb from "../../components/igra-gumb/igra-gumb.component";
-
 import "./igra.styles.scss";
+import IgraVprasanje from "../../components/igra-vprasanje/igra-vprasanje.component";
+import IgraOdgovor from "../../components/igra-odgovor/igra-odgovor.component";
+import IgraTocke from "../../components/igra-tocke/igra-tocke.component";
+
+//TODO - API za spreminjanje skupin in posiljanje na frontend
+const tempTocke = [
+  { skupina: "skupinaA", tocke: 10 },
+  { skupina: "skupinaB", tocke: 5 },
+  { skupina: "skupinaC", tocke: 12 },
+  { skupina: "skupinaD", tocke: 0 }
+];
 
 class Igra extends Component {
   componentDidMount() {
@@ -14,12 +23,19 @@ class Igra extends Component {
 
   render() {
     return (
-      <div>
-        <div>Igra</div>
-        <IgraGumb ime="A" />
-        <IgraGumb ime="B" />
-        <IgraGumb ime="C" />
-        <IgraGumb ime="D" />
+      <div className="igra">
+        <div className="igra-tocke">
+          <IgraTocke tockeData={tempTocke} />
+        </div>
+        <div className="igra-vprasanje">
+          <IgraVprasanje vprasanje="Vprasanje test test test?" />
+        </div>
+        <div className="igra-odgovori">
+          <IgraOdgovor odgovor="A" besedilo="testA" />
+          <IgraOdgovor odgovor="B" besedilo="test" />
+          <IgraOdgovor odgovor="C" besedilo="test" />
+          <IgraOdgovor odgovor="D" besedilo="test" />
+        </div>
       </div>
     );
   }

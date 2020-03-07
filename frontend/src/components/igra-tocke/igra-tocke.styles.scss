@@ -1,0 +1,34 @@
+@import "../../assets/style.scss";
+
+.tocke {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .skupina {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include robovi(1);
+
+    &-ime {
+      background: white;
+      padding: 0.5rem 2rem;
+      font-size: 1.5rem;
+      @include senca;
+      @include robovi(max);
+    }
+
+    &-tocke {
+      font-size: 2rem;
+      background: $rdeca;
+      color: white;
+      width: 75%;
+      @include senca;
+      @include center;
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+  }
+}

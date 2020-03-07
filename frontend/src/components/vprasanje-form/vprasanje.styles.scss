@@ -4,7 +4,7 @@
   .form {
     background: $modra;
     width: 40%;
-    border-radius: 1rem;
+    @include robovi(2);
     padding: 0.5rem 0.5rem;
 
     &-center {
@@ -31,7 +31,7 @@
       &-textbox {
         width: 100%;
         padding: 0.2rem 0.6rem;
-        border-radius: 1rem;
+        @include robovi(2);
         outline: none;
       }
 

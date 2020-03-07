@@ -1,0 +1,34 @@
+@import "../../assets/style.scss";
+
+.odgovor {
+  @include center;
+
+  &-container {
+    @include center;
+    @include robovi(2);
+    @include senca;
+    width: 95%;
+    height: 80%;
+    background: $modra;
+    color: $siva;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-crka {
+    background: lighten($modra, 10);
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 1.5rem 0 1rem;
+    width: 3rem;
+    height: 3rem;
+    @include center;
+    @include robovi(max);
+  }
+
+  &-besedilo {
+    font-size: 1.5rem;
+    width: 100%;
+    @include center;
+  }
+}
