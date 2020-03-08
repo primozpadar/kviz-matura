@@ -3,20 +3,32 @@
 .odgovor {
   @include center;
 
-  &-container {
+  @mixin container($barva) {
     @include center;
     @include robovi(2);
     @include senca;
     width: 95%;
     height: 80%;
-    background: $modra;
     color: $siva;
     display: flex;
     justify-content: space-between;
+    background: $barva;
   }
 
-  &-crka {
-    background: lighten($modra, 10);
+  &-container {
+    @include container($modra);
+
+    &-pravilno {
+      @include container($zelena);
+    }
+
+    &-napacno {
+      @include container($rdeca);
+    }
+  }
+
+  @mixin crka($barva) {
+    background: $barva;
     font-size: 2rem;
     font-weight: bold;
     margin: 0 1.5rem 0 1rem;
@@ -24,6 +36,16 @@
     height: 3rem;
     @include center;
     @include robovi(max);
+  }
+
+  &-crka {
+    @include crka(lighten($modra, 10));
+    &-pravilno {
+      @include crka(darken($zelena, 5));
+    }
+    &-napacno {
+      @include crka(darken($rdeca, 10));
+    }
   }
 
   &-besedilo {

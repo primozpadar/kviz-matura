@@ -1,8 +1,8 @@
 import React from "react";
 import "./igra-vprasanje.styles.scss";
 
-const IgraVprasanje = props => (
-  <div className="vprasanje">{props.vprasanje}</div>
+const IgraVprasanje = ({ vprasanje }) => (
+  <div className="vprasanje">{vprasanje}</div>
 );
 
 export default IgraVprasanje;
