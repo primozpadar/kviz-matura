@@ -31,8 +31,9 @@ class Igra extends Component {
   };
 
   componentDidMount() {
-    const socket = socketIO("http://192.168.43.73:3000");
+    const socket = socketIO("http://192.168.4.1:3000");
     socket.on("connect", () => {
+      socket.emit("igra");
       //skupine
       socket.on("skupine-imena", data => {
         this.setState({ skupineIme: data });
@@ -54,6 +55,12 @@ class Igra extends Component {
 
       socket.on("odgovori-enable", data => {
         this.setState({ odgovoriEnable: data });
+      });
+
+      socket.on("odgovori-enable-vsi", data => {
+        this.setState({
+          odgovoriEnable: { A: data, B: data, C: data, D: data }
+        });
       });
 
       socket.on("odgovori-pravilno", data => {

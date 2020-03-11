@@ -12,7 +12,7 @@ class SocketTest extends Component {
   };
 
   componentDidMount() {
-    const socket = socketIO("http://192.168.43.73:3000");
+    const socket = socketIO("http://192.168.4.1:3000");
     socket.on("connect", () => {
       socket.on("test", data => {
         console.log(data);
