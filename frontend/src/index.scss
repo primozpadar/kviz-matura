@@ -1,9 +1,31 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+//Roboto
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Roboto-Bold.ttf");
+  font-weight: bold;
+}
+
+//Montserrat
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/Montserrat-Bold.ttf");
+  font-weight: bold;
+}
+
+//TODO - odstrani font ki ni uporabljen
 
 * {
   border: 0;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat";
 }

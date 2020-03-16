@@ -4,12 +4,18 @@ import "./igra.styles.scss";
 import IgraVprasanje from "../../components/igra-vprasanje/igra-vprasanje.component";
 import IgraOdgovor from "../../components/igra-odgovor/igra-odgovor.component";
 import IgraTocke from "../../components/igra-tocke/igra-tocke.component";
+import IgraPopup from "../../components/igra-popup/igra-popup.component";
 
 class Igra extends Component {
   state = {
-    skupineIme: { A: "X", B: "X", C: "X", D: "X" },
+    skupineIme: {
+      A: "A",
+      B: "B",
+      C: "C",
+      D: "D"
+    },
     skupineTocke: { A: 0, B: 0, C: 0, D: 0 },
-    vprasanje: "",
+    vprasanje: "Vprasanje",
     odgovori: {
       A: "",
       B: "",
@@ -27,7 +33,8 @@ class Igra extends Component {
       B: "",
       C: "",
       D: ""
-    }
+    },
+    konecIgre: false
   };
 
   componentDidMount() {
@@ -64,7 +71,12 @@ class Igra extends Component {
       });
 
       socket.on("odgovori-pravilno", data => {
-        this.setState({ odgovoriPravilno: data });
+        const { A, B, C, D } = data || "";
+        this.setState({ odgovoriPravilno: { A, B, C, D } });
+      });
+
+      socket.on("konec", data => {
+        this.setState({ konecIgre: data });
       });
     });
   }
@@ -72,6 +84,11 @@ class Igra extends Component {
   render() {
     return (
       <div className="igra">
+        <IgraPopup
+          enable={this.state.konecIgre}
+          besedilo="Konec igre!"
+          skupina="A"
+        />
         <div className="igra-tocke">
           <IgraTocke
             ime={this.state.skupineIme}

@@ -6,8 +6,19 @@
   align-items: center;
 }
 
-@mixin senca {
-  box-shadow: 0.4rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+@mixin senca($stopnja: 1) {
+  @if $stopnja == 1 {
+    box-shadow: 0.4rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+  }
+  @if $stopnja == 2 {
+    box-shadow: 0.4rem 0.4rem 0.4rem rgba(0, 0, 0, 0.15);
+  }
+  @if $stopnja == 3 {
+    box-shadow: 0.4rem 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+  }
+  @if $stopnja == btn {
+    box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.1);
+  }
 }
 
 @mixin robovi($stopnja) {
@@ -17,12 +28,12 @@
   @if $stopnja == 2 {
     border-radius: 1rem;
   }
+  @if $stopnja == 3 {
+    border-radius: 1.5rem;
+  }
   @if $stopnja == max {
     border-radius: 1000px;
   }
-  //@if $stopnja == 3 {
-  //  border-radius: 3rem;
-  //}
 }
 
 $siva: #e9e9e9;

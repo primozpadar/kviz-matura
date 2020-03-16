@@ -12,7 +12,7 @@
     flex-direction: column;
   }
 
-  .button {
+  .gumb {
     background: $modra;
     color: #ffffff;
     font-weight: bold;
@@ -22,5 +22,8 @@
     margin: 0.5rem 0;
     border-radius: 100rem;
     outline: none;
+    &:hover {
+      background: darken($modra, 5);
+    }
   }
 }

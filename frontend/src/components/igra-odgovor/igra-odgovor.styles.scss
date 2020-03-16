@@ -3,54 +3,80 @@
 .odgovor {
   @include center;
 
-  @mixin container($barva) {
+  @mixin container($barva, $besedilo) {
     @include center;
-    @include robovi(2);
-    @include senca;
+    @include robovi(max);
+    @include senca(btn);
     width: 95%;
-    height: 80%;
-    color: $siva;
+    height: 75%;
+    color: $besedilo;
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
     background: $barva;
+    position: relative;
   }
 
-  &-container {
-    @include container($modra);
+  &-container- {
+    @include container(#fff, $modra);
 
-    &-pravilno {
-      @include container($zelena);
+    &DA {
+      @include container($zelena, #fff);
     }
 
-    &-napacno {
-      @include container($rdeca);
+    &NE {
+      @include container($rdeca, #fff);
     }
   }
 
-  @mixin crka($barva) {
+  @mixin crka($barva, $crka) {
     background: $barva;
-    font-size: 2rem;
+    color: $crka;
+    font-size: 3rem;
     font-weight: bold;
     margin: 0 1.5rem 0 1rem;
-    width: 3rem;
-    height: 3rem;
+    width: 6rem;
+    height: 6rem;
     @include center;
     @include robovi(max);
+    @include senca(1);
+    animation: skokAnimacija 1s;
   }
 
-  &-crka {
-    @include crka(lighten($modra, 10));
-    &-pravilno {
-      @include crka(darken($zelena, 5));
+  &-crka- {
+    @include crka($modra, #fff);
+    &DA {
+      @include crka(#fff, $zelena);
     }
-    &-napacno {
-      @include crka(darken($rdeca, 10));
+    &NE {
+      @include crka(#fff, $rdeca);
     }
   }
 
   &-besedilo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     width: 100%;
     @include center;
+    animation: skokAnimacija 1s;
+  }
+}
+
+.svg {
+  position: absolute;
+  right: 0;
+  height: 11rem;
+  filter: drop-shadow(0 0 0.8rem rgba(0, 0, 0, 0.4));
+  animation: skokAnimacija 0.5s;
+}
+
+@keyframes skokAnimacija {
+  25% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }

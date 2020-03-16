@@ -4,10 +4,13 @@ import "./homepage.styles.scss";
 import { Link } from "react-router-dom";
 
 class Homepage extends React.Component {
-  componentWillMount() {
+  constructor(props) {
+    super(props);
+    this.state = {};
+
     const socket = socketIO("http://192.168.4.1:3000");
     socket.on("connect", () => {
-      socket.emit("homepage", { data: "testtest" });
+      socket.emit("homepage");
       socket.on("homepage-start", () => {
         this.props.history.push("/igra");
         socket.disconnect();
@@ -19,18 +22,26 @@ class Homepage extends React.Component {
     return (
       <div className="homepage">
         <div className="center-container">
-          <LinkGumb path="/igra" text="START" id="igra" />
-          <LinkGumb path="/nastavitve" text="Nastavitve" id="nastavitve" />
+          <div>
+            <LinkGumb text="START" id="igra" />
+            <LinkGumb path="/nastavitve" text="Nastavitve" id="nastavitve" />
+          </div>
         </div>
       </div>
     );
   }
 }
 
-const LinkGumb = props => (
-  <Link to={props.path}>
-    <input type="button" value={props.text} className="button" />
-  </Link>
+const LinkGumb = ({ path, text }) => (
+  <div>
+    {path ? (
+      <Link to={path}>
+        <input type="button" value={text} className="gumb" />
+      </Link>
+    ) : (
+      <input type="button" value={text} className="gumb" />
+    )}
+  </div>
 );
 
 export default Homepage;

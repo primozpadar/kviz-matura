@@ -1,14 +1,19 @@
 @import "../../assets/style.scss";
 
 .vprasanje {
-  @include center;
-  @include robovi(2);
-  @include senca;
-  background: $vijolicna;
-  width: 75%;
   height: 100%;
-  //TODO-bela ali siva za pisavo??
-  color: $siva;
+  width: 100%;
+  @include center;
+}
+
+.vprasanje-card {
+  @include center;
+  @include robovi(3);
+  @include senca;
+  height: 90%;
+  width: 70%;
+  background: $modra;
+  color: #fff;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }

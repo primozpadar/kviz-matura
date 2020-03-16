@@ -1,36 +1,49 @@
 @import "../../assets/style.scss";
 
 .tocke {
-  padding: 1rem 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  height: 100%;
+  width: 100%;
+  @include center;
+
+  &-container {
+    padding: 1rem 1rem;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    @include robovi(max);
+    @include senca;
+  }
 
   .skupina {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    @include robovi(1);
-
-    &-ime {
-      z-index: 100;
-      background: #fff;
-      padding: 0.5rem 2rem;
-      font-size: 1.5rem;
-      @include senca;
-      @include robovi(max);
-    }
+    padding: 0.8rem 1.8rem;
+    background: $vijolicna;
+    @include robovi(max);
+    @include senca(1);
+    position: relative;
 
     &-tocke {
-      z-index: 10;
-      font-size: 2rem;
-      background: $rdeca;
-      color: white;
-      width: 75%;
-      @include senca;
+      @include robovi(max);
       @include center;
-      border-radius: 0 0 0.5rem 0.5rem;
+      width: 2rem;
+      height: 2rem;
+      background: #fff;
+      font-weight: bold;
+      color: $vijolicna;
+      padding: 1.3rem;
+      position: absolute;
+      font-size: 1.5rem;
+      left: 0.5rem;
+    }
+
+    &-ime {
+      font-size: 1.5rem;
+      margin-left: 2.8rem;
+      color: #fff;
     }
   }
 }
