@@ -17,7 +17,8 @@
 
     &-header {
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      user-select: none;
     }
 
     &-flex {
@@ -28,73 +29,58 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    &-gumbi {
+      display: flex;
+      align-items: flex-start;
+      white-space: nowrap;
+    }
+
+    &-vprasanje {
+      display: flex;
+      align-items: center;
+    }
   }
 
-  .add-icon {
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-    width: 2rem;
-    height: 2rem;
-    background: $modra;
-    @include center;
+  @mixin add-gumb {
     color: #fff;
-    border-radius: 100rem;
+    padding: 0.6rem 1.8rem;
+    margin: 0 1rem;
+    font-weight: bold;
+    @include robovi(max);
+    @include senca;
+    user-select: none;
+  }
+
+  .gumb-vpr {
+    @include add-gumb;
+    cursor: pointer;
+    background: $modra;
     &:hover {
       background: darken($modra, 5);
-      cursor: pointer;
     }
   }
 
-  .tabela {
-    @include senca;
-    border-radius: 1rem;
-    table-layout: fixed;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
-
-    th {
-      background: $modra;
-      color: #fff;
-      text-align: left;
-      padding: 0.8rem 1rem;
-      &:first-child {
-        border-radius: 1rem 0 0 0;
-      }
-      &:last-child {
-        border-radius: 0 1rem 0 0;
-      }
+  .gumb-kat {
+    @include add-gumb;
+    cursor: pointer;
+    background: $vijolicna;
+    &:hover {
+      background: darken($vijolicna, 5);
     }
+  }
 
-    td {
-      background: #fff;
-      max-width: 5rem;
-      word-break: break-all;
-      padding: 0.5rem 1rem;
-      border-top: 1px solid $siva;
-    }
-
-    tr:last-child td:last-child {
-      border-radius: 0 0 1rem 0;
-    }
-
-    tr:last-child td:first-child {
-      border-radius: 0 0 0 1rem;
-    }
-
-    $sirina: 4rem;
-    &-edit {
-      width: $sirina;
-      text-align: center;
-      &-header {
-        width: $sirina;
-      }
-      &-icon {
-        &:hover {
-          color: $modra;
-          cursor: pointer;
-        }
-      }
+  .select-kategorija {
+    @include robovi(1);
+    padding: 0.5rem 1rem;
+    margin-left: 2rem;
+    font-size: 1rem;
+    background: $vijolicna;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    &:focus {
+      background: darken($vijolicna, 5);
     }
   }
 }

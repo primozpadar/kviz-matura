@@ -1,0 +1,271 @@
+@import "../../assets/style.scss";
+
+.zapri {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: transparent;
+  color: #000;
+  outline: none;
+  &:hover {
+    color: $rdeca;
+    transform: scale(1.1);
+  }
+}
+
+.nastavitve_form {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  @include center;
+
+  &-container {
+    @include robovi(2);
+    background: $siva;
+    width: 50vw;
+    padding: 2rem;
+    position: relative;
+  }
+
+  &-header {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    user-select: none;
+  }
+}
+
+label {
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.input {
+  &-container {
+    //background: $zelena;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+
+    &-odgovori {
+      margin-top: 1rem;
+      background: #fff;
+      padding: 0.5rem 0.8rem;
+      @include robovi(1);
+      @include senca;
+    }
+  }
+
+  @mixin inputField($barva) {
+    @include robovi(1);
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-left: 1rem;
+    background: $barva;
+    color: #fff;
+    outline: none;
+    &:focus {
+      background: darken($barva, 5);
+    }
+  }
+
+  &-kategorija {
+    @include inputField($vijolicna);
+    cursor: pointer;
+    &-novo {
+      @include inputField($vijolicna);
+    }
+  }
+
+  &-vprasanje {
+    @include inputField($modra);
+  }
+
+  &-submit {
+    background: $modra;
+    margin: 1.5rem 0 0 0;
+    width: 25%;
+    padding: 0.8rem 0;
+    @include robovi(max);
+    @include senca(3);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    animation: jumpShow 0.3s;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($modra, 5);
+      transform: scale(1.01);
+    }
+
+    &-container {
+      @include center;
+    }
+  }
+}
+
+.vijolicna {
+  background: $vijolicna;
+  &:hover {
+    background: darken($vijolicna, 5);
+    transform: scale(1.01);
+  }
+}
+
+.input-odgovor {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+
+  &-label {
+    white-space: nowrap;
+  }
+
+  &-input {
+    background: $siva;
+    margin: 0 0.5rem 0 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    @include robovi(1);
+    outline: none;
+    &:focus {
+      background: darken($siva, 5);
+    }
+  }
+}
+
+/*
+RADIO BTN
+*/
+$ozadje: #ffffff;
+$selectedRadio: $zelena;
+
+.radio {
+  margin: 0.5rem;
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    + .radio-label {
+      &:before {
+        content: "";
+        background: $ozadje;
+        border-radius: 100%;
+        border: 3px solid $selectedRadio;
+        display: inline-block;
+        width: 0.8em;
+        height: 0.8em;
+        position: relative;
+        top: -0.2em;
+        vertical-align: top;
+        cursor: pointer;
+        text-align: center;
+        animation: jumpShow 0.3s;
+      }
+    }
+
+    &:checked {
+      + .radio-label {
+        &:before {
+          background-color: $selectedRadio;
+        }
+      }
+    }
+    &:focus {
+      + .radio-label {
+        &:before {
+          outline: none;
+          border-color: $selectedRadio;
+        }
+      }
+    }
+    &:disabled {
+      + .radio-label {
+        &:before {
+          box-shadow: inset 0 0 0 4px $ozadje;
+          border-color: darken($ozadje, 25%);
+          background: darken($ozadje, 25%);
+        }
+      }
+    }
+    + .radio-label {
+      &:empty {
+        &:before {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes jumpShow {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+//.vprasanje-form {
+//  .form {
+//    background: $modra;
+//    width: 40%;
+//    @include robovi(2);
+//    padding: 0.5rem 0.5rem;
+//
+//    &-center {
+//      @include center;
+//    }
+//
+//    &-submit {
+//      margin: 0.5rem 0;
+//      padding: 0.5rem 3rem;
+//      border-radius: 100rem;
+//      background: #fff;
+//      font-weight: bold;
+//      &:hover {
+//        background: $siva;
+//      }
+//    }
+//
+//    .field {
+//      padding: 0.5rem;
+//      display: flex;
+//      justify-content: space-between;
+//      align-items: center;
+//
+//      &-textbox {
+//        width: 100%;
+//        padding: 0.2rem 0.6rem;
+//        @include robovi(2);
+//        outline: none;
+//      }
+//
+//      &-radio {
+//        margin: 0 0.2rem;
+//      }
+//
+//      &-label {
+//        color: #fff;
+//        padding: 0 0.5rem 0 0.3rem;
+//      }
+//    }
+//  }
+//}
+//
