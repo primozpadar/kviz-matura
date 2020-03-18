@@ -1,0 +1,63 @@
+@import "../../assets/style.scss";
+
+.skupine {
+  background: $zelena;
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw;
+
+  &-container {
+    padding: 3rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-shrani {
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+    font-size: 1.5rem;
+    background: darken($zelena, 10);
+    color: #fff;
+    outline: none;
+    @include robovi(1);
+    @include senca(btn);
+    &:active {
+      background: darken($zelena, 12);
+    }
+    &-center {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.inputskupina {
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: center;
+  //align-items: flex-start;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  &-header {
+    margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.4);
+  }
+
+  &-input {
+    outline: none;
+    width: 100%;
+    @include robovi(1);
+    @include senca(btn);
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    &:focus {
+      box-shadow: inset 0px 0px 0px 3px darken($zelena, 10);
+    }
+  }
+}

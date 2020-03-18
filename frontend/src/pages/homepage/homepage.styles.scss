@@ -3,27 +3,50 @@
 .homepage {
   @include center;
   height: 100vh;
+  width: 100vw;
   background: $siva;
 
   .center-container {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
 
-  .gumb {
-    background: $modra;
+  @mixin gumb() {
     color: #ffffff;
     font-weight: bold;
-    font-size: 1rem;
-    padding: 0.7rem;
-    width: 12rem;
+    font-size: 2rem;
+    padding: 0.8rem 2.5rem;
+    width: 18rem;
     margin: 0.5rem 0;
-    border-radius: 100rem;
+    @include robovi(2);
     outline: none;
-    &:hover {
-      background: darken($modra, 5);
+  }
+
+  .gumb {
+    &-start {
+      background: $rdeca;
+      @include gumb;
+    }
+
+    &-nastavitve {
+      background: $vijolicna;
+      @include gumb;
+      cursor: pointer;
+      &:hover {
+        background: darken($vijolicna, 10);
+      }
+    }
+
+    &-skupine {
+      background: $zelena;
+      @include gumb;
+      cursor: pointer;
+      &:hover {
+        background: darken($zelena, 5);
+      }
     }
   }
 }

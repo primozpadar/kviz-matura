@@ -8,6 +8,19 @@
     padding: 2rem 3rem;
   }
 
+  &-nazaj {
+    background: transparent;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    font-weight: bold;
+    font-size: 2rem;
+    outline: none;
+    &:hover {
+      color: $rdeca;
+    }
+  }
+
   .container {
     @include senca;
     background: $siva;

@@ -62,9 +62,16 @@ class Nastavitve extends React.Component {
     this.setState({ showForm: "vprasanje" });
   };
 
+  nazajHandler = () => {
+    this.props.history.push("/");
+  };
+
   render() {
     return (
       <div className="nastavitve">
+        <button className="nastavitve-nazaj" onClick={this.nazajHandler}>
+          &times;
+        </button>
         <div className="wrap-container">
           {this.state.showForm === "vprasanje" ? (
             <VprasanjeForm

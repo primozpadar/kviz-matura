@@ -1,0 +1,5 @@
+{"kategorija":"kategorija3","vprasanja":[],"_id":"Owx9EaHr2OJyrTBQ"}
+{"kategorija":"Kviz o maturi","vprasanja":[{"vprasanje":"ali vas je strah mature","odgovori":{"A":"da","B":"vsekakor","C":"mogoče malo","D":"zelo"},"pravilno":{"A":false,"B":false,"C":false,"D":true}},{"vprasanje":"kaj je matura","odgovori":{"A":"krneki","B":"neki na konc sredne","C":"nč pamtnga","D":"buruh"},"pravilno":{"A":false,"B":true,"C":false,"D":false}}],"_id":"o43dguzfkZU0IKsS"}
+{"kategorija":"Kategorija bla bla bla","vprasanja":[{"vprasanje":"kam gre beli zajček?","odgovori":{"A":"v gozd","B":"na travnik","C":"ne vem","D":"bog si ga vedi"},"pravilno":{"A":true,"B":false,"C":false,"D":false}},{"vprasanje":"ali ta kviz dela","odgovori":{"A":"da","B":"seveda","C":"vsekakor","D":"nikakor"},"pravilno":{"A":false,"B":false,"C":false,"D":true}},{"vprasanje":"kakšne čevlje ma petra","odgovori":{"A":"hude","B":"carske","C":"najjače","D":"bedne"},"pravilno":{"A":false,"B":true,"C":false,"D":false}}],"_id":"sBr6rLpoyBbD4I4K"}
+{"kategorija":"testnaKategorija","vprasanja":[],"_id":"tJuMN3AI6UYgmPWw"}
+{"kategorija":"se ena kategorija","vprasanja":[],"_id":"wN1oVcxuSOBmGsW7"}

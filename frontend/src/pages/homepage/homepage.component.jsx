@@ -1,7 +1,6 @@
 import React from "react";
 import socketIO from "socket.io-client";
 import "./homepage.styles.scss";
-import { Link } from "react-router-dom";
 import HomepageKategorija from "../../components/homepage-kategorija/homepage-kategorija.component";
 
 class Homepage extends React.Component {
@@ -56,6 +55,11 @@ class Homepage extends React.Component {
     this.props.history.push("/nastavitve");
   };
 
+  odpriSkupine = () => {
+    this.socket.disconnect();
+    this.props.history.push("/skupine");
+  };
+
   render() {
     return (
       <div className="homepage">
@@ -66,40 +70,23 @@ class Homepage extends React.Component {
           />
         ) : null}
         <div className="center-container">
-          <div>
-            <LinkGumb text="START" id="igra" />
-            <LinkGumb
-              onClick={this.openNastavitve}
-              text="Nastavitve"
-              id="nastavitve"
-            />
-          </div>
+          <input className="gumb-start" type="button" value="START" />
+          <input
+            className="gumb-nastavitve"
+            onClick={this.openNastavitve}
+            type="button"
+            value="nastavitve"
+          />
+          <input
+            className="gumb-skupine"
+            onClick={this.odpriSkupine}
+            type="button"
+            value="skupine"
+          />
         </div>
       </div>
     );
   }
 }
-
-const LinkGumb = ({ path, text, onClick }) => (
-  <div>
-    {path ? (
-      <Link to={path}>
-        <input
-          onClick={onClick || null}
-          type="button"
-          value={text}
-          className="gumb"
-        />
-      </Link>
-    ) : (
-      <input
-        onClick={onClick || null}
-        type="button"
-        value={text}
-        className="gumb"
-      />
-    )}
-  </div>
-);
 
 export default Homepage;
