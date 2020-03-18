@@ -78,6 +78,17 @@ class Igra extends Component {
       socket.on("konec", data => {
         this.setState({ konecIgre: data });
       });
+
+      socket.on("igra-showStats", () => {
+        //TODO - pokazi tocke in vrstni red skupin
+        socket.disconnect();
+        window.location = "/";
+      });
+
+      socket.on("redirect-home", () => {
+        socket.disconnect();
+        window.location = "/";
+      });
     });
   }
 

@@ -1,0 +1,41 @@
+@import "../../assets/style.scss";
+
+.homepage-kategorija {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  @include center;
+
+  &-container {
+    @include robovi(2);
+    background: $siva;
+    width: 50vw;
+    padding: 2rem;
+    position: relative;
+  }
+
+  &-header {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    user-select: none;
+  }
+}
+
+.kategorija {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 3px solid $vijolicna;
+  @include robovi(1);
+
+  &-selected {
+    @include senca(1);
+    color: #fff;
+    background: $vijolicna;
+    transform: scale(1.02);
+    transition: transform 0.2s;
+  }
+}

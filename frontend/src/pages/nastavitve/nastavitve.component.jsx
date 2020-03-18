@@ -108,10 +108,6 @@ class Nastavitve extends React.Component {
   }
 }
 
-//const SelectKategorija = () => {
-//  return <div>Selector</div>;
-//};
-
 //FIXME - popravi option za "ni kategorij" - ne prikaze se tudi ce ni kategorij
 const SelectKategorija = ({
   kategorije,

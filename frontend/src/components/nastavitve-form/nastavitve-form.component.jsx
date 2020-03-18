@@ -43,6 +43,7 @@ const VprasanjeForm = ({
           <div className="input-container">
             <label htmlFor="kategorija">kategorija:</label>
             <select
+              tabIndex="1"
               onChange={e => setKategorijaId(e.target.value)}
               className="input-kategorija"
               id="kategorija"
@@ -65,6 +66,7 @@ const VprasanjeForm = ({
           <div className="input-container">
             <label htmlFor="vprasanje">vprašanje:</label>
             <input
+              tabIndex="2"
               onChange={e => setVprasanje(e.target.value)}
               type="text"
               className="input-vprasanje"
@@ -120,6 +122,7 @@ const InputOdgovor = ({ odgovor, radioHandler, inputHandler }) => {
         htmlFor={odgovor}
       >{`odgovor ${odgovor}:`}</label>
       <input
+        tabIndex="3"
         onChange={inputHandler}
         className="input-odgovor-input"
         type="text"
@@ -129,6 +132,7 @@ const InputOdgovor = ({ odgovor, radioHandler, inputHandler }) => {
 
       <div className="radio">
         <input
+          tabIndex="4"
           onChange={radioHandler}
           id={odgovor}
           name="radio"
